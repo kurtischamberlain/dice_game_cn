@@ -12,36 +12,40 @@
     <!-- Style Ends -->
 
     <title>Dice game!</title>
-
-        <h1>Welcome to Kurtis's Extravaganza Dice Roll Roundup Game </h1>
-        <p>The aim is to be the first person to reach 100 points by rolling the dice as many times as you dare. Be careful though! if you roll a 1, your score resets to 0 and you'll have to start over again. To add insult to injury, you exit the game if you roll a 1 three times simulataneously!</p>
-        <p>So how to win? Simply reach 100 points and avoid  those dastardly 1 rolls. Fear for your life? Press the hold button for the next player to have some rolls.
-
-        <p>Please type the names of up to ten players.</p>
-        </p>
-
-
-
-
-        <!-- Player List -->
-        <p id="player_1_name">Player 0 placeholder</p>
-        <p>Player 1 placeholder</p>
-        <p>Player 2 placeholder</p>
-        <p>Player 3 placeholder</p>
-        <p>Player 4 placeholder</p>
-        <p>Player 5 placeholder</p>
-        <p>Player 6 placeholder</p>
-        <p>Player 7 placeholder</p>
-        <p>Player 8 placeholder</p>
-        <p>Player 9 placeholder</p>
-        <form>
-            <input id="addPlayerName" type="text"></input>
-            <button id="addPlayerButton" onclick="add_players()">Add name</button>
-        </form>
-
 </head>
 <body>
     
+    <h1>Welcome to Kurtis's Extravaganza Dice Roll Roundup Game </h1>
+    <p>The aim is to be the first person to reach 100 points by rolling the dice as many times as you dare. Be careful though! if you roll a 1, your score resets to 0 and you'll have to start over again. To add insult to injury, you exit the game if you roll a 1 three times simulataneously!</p>
+    <p>So how to win? Simply reach 100 points and avoid  those dastardly 1 rolls. Fear for your life? Press the hold button for the next player to have some rolls.
+
+    <p>Please type the names of up to ten players and then click 'Roll Dice' to roll dice for the first person. </p>
+    </p>
+
+
+
+
+    <!-- Player Table  -->
+    <span id="player_0_name">Standing By </span><span id="player_0_roll">0 </span><span id="player_0_lives">3 lives</span><br />
+    <span id="player_1_name">Standing By </span><span id="player_0_roll">0 </span><span id="player_1_lives">3 lives</span><br />
+    <span id="player_2_name">Standing By </span><span id="player_0_roll">0 </span><span id="player_2_lives">3 lives</span><br />
+    <span id="player_3_name">Standing By </span><span id="player_0_roll">0 </span><span id="player_3_lives">3 lives</span><br />
+    <span id="player_4_name">Standing By </span><span id="player_0_roll">0 </span><span id="player_4_lives">3 lives</span><br />
+    <span id="player_5_name">Standing By </span><span id="player_0_roll">0 </span><span id="player_5_lives">3 lives</span><br />
+    <span id="player_6_name">Standing By </span><span id="player_0_roll">0 </span><span id="player_6_lives">3 lives</span><br />
+    <span id="player_7_name">Standing By </span><span id="player_0_roll">0 </span><span id="player_7_lives">3 lives</span><br />
+    <span id="player_8_name">Standing By </span><span id="player_0_roll">0 </span><span id="player_8_lives">3 lives</span><br />
+    <span id="player_9_name">Standing By </span><span id="player_0_roll">0 </span><span id="player_9_lives">3 lives</span><br />
+
+    <form onclick="return false"> <!-- Player name input form -->
+        <input id="addPlayerName" type="text"></input>
+        <button id="addPlayerButton" onclick="add_players()">Add name</button>
+    </form>
+
+    <form onclick="return false"><!-- Game buttons form -->
+        <button id="rollDicebutton" onclick="dice_roll()">Roll Dice</button>
+        <button id="holdButton">Hold</button>
+    </form>
 
 
 
@@ -52,26 +56,47 @@
     <script>
         // Variables
         const active_player = []; //Array of players for the game 
-        let player_lives = [] //Array of lives for each player (line them up well!
+        const player_lives = []; //Array of lives for each player (line them up well!
+        let  player_name = "";
         let in_session = 0; //Checks if the game is currently "in session" (or being played actively)
+        let i = 0; // Sets global index for functions.
 
 
         function add_players(){
-            active_player.push(document.getElementById("addPlayerName").value);
+            player_name = document.getElementById("addPlayerName").value;
+            active_player.push(player_name);
             player_lives.push(3);
-            console.log(active_player)
-            console.log(player_lives)
+            
 
-        }
+            /* Game name replacement part! */
+            document.getElementById("player_"+ i +"_name").innerText = active_player[i] + " "; //Replaces the player names
+            document.getElementById("player_"+ i +"_lives").innerText = player_lives[i] + " lives"; //Replaces the player names
+            
+            i += 1; // Increase index so that players can add up to ten names
+            
+            
+
+            /* Game name replacement end */
+            
+            console.log("Active player inside function: " + active_player);
+            console.log(player_lives);
+            
+ 
+        };
 
         function dice_roll(){
             dice_result = Math.floor(Math.random() * 6) + 1;
             console.log(dice_result);
-        }
+        };
 
-
-
+        console.log("Player name from form: " + player_name);
+        console.log("Active players: " + active_player);
+        console.log("Lives array: " + player_lives);
         dice_roll();
+
+
+
+        // Names display in HTML
 
 
     </script>
