@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Style Starts -->
+    <style>
+
+    </style>
+    <!-- Style Ends -->
+
+    <title>Dice game!</title>
+
+        <h1>Welcome to Kurtis's Extravaganza Dice Roll Roundup Game </h1>
+        <p>The aim is to be the first person to reach 100 points by rolling the dice as many times as you dare. Be careful though! if you roll a 1, your score resets to 0 and you'll have to start over again. To add insult to injury, you exit the game if you roll a 1 three times simulataneously!</p>
+        <p>So how to win? Simply reach 100 points and avoid  those dastardly 1 rolls. Fear for your life? Press the hold button for the next player to have some rolls.
+
+        <p>Please type the names of up to ten players.</p>
+        </p>
+
+
+
+
+        <!-- Player List -->
+        <p id="player_1_name">Player 0 placeholder</p>
+        <p>Player 1 placeholder</p>
+        <p>Player 2 placeholder</p>
+        <p>Player 3 placeholder</p>
+        <p>Player 4 placeholder</p>
+        <p>Player 5 placeholder</p>
+        <p>Player 6 placeholder</p>
+        <p>Player 7 placeholder</p>
+        <p>Player 8 placeholder</p>
+        <p>Player 9 placeholder</p>
+        <form>
+            <input id="addPlayerName" type="text"></input>
+            <button id="addPlayerButton" onclick="add_players()">Add name</button>
+        </form>
+
+</head>
+<body>
+    
+
+
+
+
+    <!-- Roll Dice -->
+
+
+    <script>
+        // Variables
+        const active_player = []; //Array of players for the game 
+        let player_lives = [] //Array of lives for each player (line them up well!
+        let in_session = 0; //Checks if the game is currently "in session" (or being played actively)
+
+
+        function add_players(){
+            active_player.push(document.getElementById("addPlayerName").value);
+            player_lives.push(3);
+            console.log(active_player)
+            console.log(player_lives)
+
+        }
+
+        function dice_roll(){
+            dice_result = Math.floor(Math.random() * 6) + 1;
+            console.log(dice_result);
+        }
+
+
+
+        dice_roll();
+
+
+    </script>
+</body>
+</html>
