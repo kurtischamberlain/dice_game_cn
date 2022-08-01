@@ -83,8 +83,10 @@
         </div>
     </form>
 
-    </div><!-- Central game wrapper end -->
 
+
+    </div><!-- Central game wrapper end -->
+    
     <!-- Javascript start --------------------------------------------------------------- -->
     <script>
         // Variables
@@ -218,13 +220,13 @@
             dice_roll()
             in_session = 1;
 
-            function checkfor21(){
-                    if (player_score + dice_result % 21 === 0)
-                        return false;
-                    
-            }
+            const checkFor21Variable = player_score[indexCount] + dice_result;
             
-            console.log(checkfor21());
+            console.log("This is to check for the 21. Value currently output: " + checkFor21Variable)
+            console.log("Dice result = " + dice_result);
+            console.log("Player score: " + player_score);
+
+            
 
             if (active_player == ""){
                 document.getElementById("game_messages").innerText = "Wow you're impatient. Add at least one name first and then try again!";
@@ -240,7 +242,7 @@
                 document.getElementById("game_messages").innerText = "You have no lives left! Pass the dice to " + active_player[indexCount];
                 
 
-            } else if (checkfor21 == true && player_score != 0) { // Checks if score is divisible by 21
+            } else if (checkFor21Variable % 21 == 0 && player_score != 0) { // Checks if score is divisible by 21
                 player_score[indexCount] = 0;
                 player_lives[indexCount] -= 1;
 
