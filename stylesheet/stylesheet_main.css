@@ -31,5 +31,146 @@ body {
 
 
 
+#primaryDisplay {
+    background-image: linear-gradient(to right, #181a19, #1f2220);
+    width: 70%;
+    float:left;
+    margin: auto;
+    padding: 10px;
+    color: #FFFFFF;
+    font-weight: bold;
+}
 
+
+#game_messages {
+    background-color: #164e3b;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+
+#player_table_row_title {
+    padding: 2px;
+    margin: 2px;
+    background-color: #304135;
+    background-image: linear-gradient(to right, #181a19, #1f2220);
+}
+
+
+#mainDisplayPlayerName {
+    width: 300px;
+    font-size: 200%;
+    background-image: linear-gradient(to top, #11cfbf, #289289);
+    text-align: center;
+    color: #1f2220;
+    display: inline-block;
+
+
+
+}
+
+#mainDisplayPlayerThrows, #mainDisplayPlayerScore, #mainDisplayPlayerLives {
+    display: inline-block;
+    font-size: 120%;
+    color: #000;
+    background-image: linear-gradient(to top, #589994, #47807b);
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 3px;
+    height: 100%;
+}
+
+#rollDicebutton {
+    padding: 5px 50px 5px 50px;
+    font-size: 12pt;
+}
+
+#holdButton {
+    padding: 5px 15px 5px 15px;
+}
+
+#start_game_again {
+    background-color:rgb(14, 51, 25);
+    color: #FFF;
+}
+
+/* CSS elements strictly for the Player Table! */
+
+#player_table {
+    float:right;
+    padding: 10px;
+    background-image: url("/images/player_table.jpg");
+    min-width: 250px;
+}
+
+#player_table_row {
+    padding: 2px;
+    margin: 2px;
+    background-color: #304135;
+    
+    background-image: linear-gradient(to right, #304135, #74917c);
+}
+
+#player_0_name, #player_1_name, #player_2_name, #player_3_name, #player_4_name, #player_5_name, #player_6_name, #player_7_name, #player_8_name, #player_9_name {
+    font-weight: bolder;
+    color: #000;
+
+    padding: 0px 5px 0px 5px;
+    color: #FFF;
+}
+
+#player_0_lives, #player_1_lives, #player_2_lives, #player_3_lives, #player_4_lives, #player_5_lives, #player_6_lives, #player_7_lives, #player_8_lives, #player_9_lives  {
+    float: right;
+    width: 70px;
+    text-align: center;
+    background-color: #0f2412;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+#player_0_score, #player_1_score, #player_2_score, #player_3_score, #player_4_score, #player_5_score, #player_6_score, #player_7_score, #player_8_score, #player_9_score {
+    float: right;
+    width: 30px;
+    text-align: center;
+    background-color: #0f2412;
+    margin-left: 2px;
+    margin-right: 2px;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+
+/* Title Section */
+
+#player_title_name {
+    font-weight: bolder;
+    color: #000;
+
+    padding: 0px 5px 0px 5px;
+    color: #FFF;
+}
+
+#player_title_lives {
+    float: right;
+    width: 70px;
+    text-align: center;
+    background-color: #0f2412;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+#player_title_score {
+    float: right;
+    width: 30px;
+    text-align: center;
+    background-color: #0f2412;
+    margin-left: 2px;
+    margin-right: 2px;
+    color: #FFFFFF;
+    font-weight: bold;
+
+
+}
 
