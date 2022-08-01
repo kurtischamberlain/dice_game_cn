@@ -1,12 +1,12 @@
-@import url("/stylesheet/player_table_stylesheet.css");
-@import url("/stylesheet/primary_display_stylesheet.css");
+@import url("player_table_stylesheet.css");
+@import url("primary_display_stylesheet.css");
 
 * {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-image: url("/images/background.jpg");
+    background-image: url("../images/background.jpg");
     background-color: #06310d;
 }
 
