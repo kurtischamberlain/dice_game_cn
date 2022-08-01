@@ -180,6 +180,9 @@
         // 
         function next_turn_check() {
 
+            dice_result = 0;
+
+
             if (indexCount >= active_player.length - 1) {// Simply checks if next entry in array exists
                 indexCount = 0; 
                         
@@ -190,7 +193,7 @@
                 indexCount += 1;
             }
 
-
+            primary_display_update();
                  
 
 
@@ -230,20 +233,22 @@
             } else if (player_score[indexCount] + dice_result >= 100){ //Checked if roll is over 100!
                 player_score[indexCount] = 100;
                 document.getElementById("game_messages").innerText = active_player[indexCount] + " has won this game! Congratulations! You rolled a " + dice_result + ".";
+
             
             } else if (player_lives[indexCount] == 0){ // Checks if curent player has lives 
                 next_turn_check();
                 document.getElementById("game_messages").innerText = "You have no lives left! Pass the dice to " + active_player[indexCount];
-            
+                
+
             } else if (checkfor21 == true && player_score != 0) { // Checks if score is divisible by 21
                 player_score[indexCount] = 0;
                 player_lives[indexCount] -= 1;
 
 
                 
-                
-                document.getElementById("game_messages").innerText = "Oh no! You scored  a multiple of 21! Busted. You forfeit the turn. Pass the die to " + active_player[indexCount];
                 next_turn_check();
+                document.getElementById("game_messages").innerText = "Oh no! You scored  a multiple of 21! Busted. You forfeit the turn. Pass the die to " + active_player[indexCount];
+                
 
                 
 
@@ -257,6 +262,7 @@
                 
                 next_turn_check();
                 document.getElementById("game_messages").innerText = "Oh no! You rolled a 1. Oops. You've just lost your points! You've forfeit your turn. Next up: " + active_player[indexCount];
+                
             } 
 
             primary_display_update()
