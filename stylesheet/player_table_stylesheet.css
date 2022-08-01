@@ -3,7 +3,7 @@
 #player_table {
     float:right;
     padding: 10px;
-    background-image: url("/images/player_table.jpg");
+    background-image: url("images/player_table.jpg");
     min-width: 250px;
 }
 
