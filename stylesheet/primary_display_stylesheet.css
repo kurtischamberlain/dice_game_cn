@@ -1,0 +1,64 @@
+#primaryDisplay {
+    background-image: linear-gradient(to right, #181a19, #1f2220);
+    width: 70%;
+    float:left;
+    margin: auto;
+    padding: 10px;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+
+#game_messages {
+    background-color: #164e3b;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+
+#player_table_row_title {
+    padding: 2px;
+    margin: 2px;
+    background-color: #304135;
+    background-image: linear-gradient(to right, #181a19, #1f2220);
+}
+
+
+#mainDisplayPlayerName {
+    width: 300px;
+    font-size: 200%;
+    background-image: linear-gradient(to top, #11cfbf, #289289);
+    text-align: center;
+    color: #1f2220;
+    display: inline-block;
+
+
+
+}
+
+#mainDisplayPlayerThrows, #mainDisplayPlayerScore, #mainDisplayPlayerLives {
+    display: inline-block;
+    font-size: 120%;
+    color: #000;
+    background-image: linear-gradient(to top, #589994, #47807b);
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 3px;
+    height: 100%;
+}
+
+#rollDicebutton {
+    padding: 5px 50px 5px 50px;
+    font-size: 12pt;
+}
+
+#holdButton {
+    padding: 5px 15px 5px 15px;
+}
+
+#start_game_again {
+    background-color:rgb(14, 51, 25);
+    color: #FFF;
+}

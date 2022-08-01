@@ -1,0 +1,35 @@
+@import url("/stylesheet/player_table_stylesheet.css");
+@import url("/stylesheet/primary_display_stylesheet.css");
+
+* {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-image: url("/images/background.jpg");
+}
+
+
+
+#GameWrapper {
+    background-color: #dbdfd2;
+    opacity: 70%;
+    max-width: 1200px;
+    padding: 20px;
+    margin: auto;
+    clear: both;
+    min-height: 500px;
+}
+
+#GameWrapper h1 {
+    background-color:#31410c;
+    color: rgb(228, 243, 224);
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+
+
+

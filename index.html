@@ -6,51 +6,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Style Starts -->
-    <style>
-
-    </style>
+    <link rel="stylesheet" href="/stylesheet/stylesheet_main.css">
     <!-- Style Ends -->
 
     <title>Kurtis's Dice game!</title>
 </head>
 <body>
     
-    <h1>Welcome to Kurtis's Extravaganza Dice Roll Roundup Game </h1>
-    <p>The aim is to be the first person to reach 100 points by rolling the dice as many times as you dare. Be careful though! if you roll a 1, your score resets to 0 and you'll have to start over again. To add insult to injury, you exit the game if you roll a 1 three times simulataneously!</p>
-    <p>So how to win? Simply reach 100 points and avoid  those dastardly 1 rolls. Fear for your life? Press the hold button for the next player to have some rolls. </p>
-    <p>One last rule to be mindful of; if your score is a multiple of 7, you lose your points and a life!
 
-    <p>Please type the names of up to ten players. Done that and ready to play? Click 'Roll Dice' to begin... </p>
-    </p>
+    <div id="GameWrapper">
+        
+        <div id="game_text">
+            <h1>Welcome to Kurtis's Extravaganza Dice Roll Roundup Game </h1>
+
+                <!-- Player Table  -->
+        <div id="player_table">
+            <!-- Title row -->
+            <div id="player_table_row_title">
+                <span id="player_title_name">Names: </span>
+                <span id="player_title_lives">Lives:</span>
+                <span id="player_title_score">Sc: </span>
+            </div>
+            <!-- Title row end -->
+
+            <div id="player_table_row"><span id="player_0_name"> </span> <span id="player_0_lives"></span> <span id="player_0_score"> </span></div>
+            <div id="player_table_row"><span id="player_1_name"> </span> <span id="player_1_lives"></span> <span id="player_1_score"> </span></div>
+            <div id="player_table_row"><span id="player_2_name"> </span> <span id="player_2_lives"></span> <span id="player_2_score"> </span></div>
+            <div id="player_table_row"><span id="player_3_name"> </span> <span id="player_3_lives"></span> <span id="player_3_score"> </span></div>
+            <div id="player_table_row"><span id="player_4_name"> </span> <span id="player_4_lives"></span> <span id="player_4_score"> </span></div>
+            <div id="player_table_row"><span id="player_5_name"> </span> <span id="player_5_lives"></span> <span id="player_5_score"> </span></div>
+            <div id="player_table_row"><span id="player_6_name"> </span> <span id="player_6_lives"></span> <span id="player_6_score"> </span></div>
+            <div id="player_table_row"><span id="player_7_name"> </span> <span id="player_7_lives"></span> <span id="player_7_score"> </span></div>
+            <div id="player_table_row"><span id="player_8_name"> </span> <span id="player_8_lives"></span> <span id="player_8_score"> </span></div>
+            <div id="player_table_row"><span id="player_9_name"> </span> <span id="player_9_lives"></span> <span id="player_9_score"> </span></div>
+            
+            <div style="padding-top: 5px;">
+                <form onclick="return false"> <!-- Player name input form -->
+                <input id="addPlayerName" type="text"></input>
+                <button id="addPlayerButton" onclick="add_players()">Add name</button>
+                </form>
+           </div>
+
+        </div> <!-- End player table -->
+
+            <p>The aim is to be the first person to reach 100 points by rolling the dice as many times as you dare. Be careful though! if you roll a 1 or score a multiple of 21, you will forfeit your turn, lose a life, and lose your accumilated points!</p>
+            <p>So how to win? Simply reach 100 points and avoid  those dastardly 1 rolls. Scared to roll again? Press the hold button for the next player to have a go! Careful though, you don't want them racing ahead. </p>
+
+
+            <p>Please type the names of up to <b>ten</b> players. Done that and ready to play? Click 'Roll Dice' to begin... </p>
+            </p>
+        </div> <!-- End "game_text" div ID -->
 
 
 
 
-    <!-- Player Table  -->
-    <span id="player_title_name">Player Names: </span><span id="player_title_roll">Die Roll: </span><span id="player_title_lives">Lives:</span><br />
-    <span id="player_0_name">Standing By </span><span id="player_0_score">0 </span><span id="player_0_lives">3 lives</span><br />
-    <span id="player_1_name">Standing By </span><span id="player_1_score">0 </span><span id="player_1_lives">3 lives</span><br />
-    <span id="player_2_name">Standing By </span><span id="player_2_score">0 </span><span id="player_2_lives">3 lives</span><br />
-    <span id="player_3_name">Standing By </span><span id="player_3_score">0 </span><span id="player_3_lives">3 lives</span><br />
-    <span id="player_4_name">Standing By </span><span id="player_4_score">0 </span><span id="player_4_lives">3 lives</span><br />
-    <span id="player_5_name">Standing By </span><span id="player_5_score">0 </span><span id="player_5_lives">3 lives</span><br />
-    <span id="player_6_name">Standing By </span><span id="player_6_score">0 </span><span id="player_6_lives">3 lives</span><br />
-    <span id="player_7_name">Standing By </span><span id="player_7_score">0 </span><span id="player_7_lives">3 lives</span><br />
-    <span id="player_8_name">Standing By </span><span id="player_8_score">0 </span><span id="player_8_lives">3 lives</span><br />
-    <span id="player_9_name">Standing By </span><span id="player_9_score">0 </span><span id="player_9_lives">3 lives</span><br />
-
-    <form onclick="return false"> <!-- Player name input form -->
-        <input id="addPlayerName" type="text"></input>
-        <button id="addPlayerButton" onclick="add_players()">Add name</button>
-    </form>
 
     <div id="primaryDisplay">
-        <p><span id="mainDisplayPlayerName">Active Player's name</span><span>'s turn</span>
-           <span id="mainDisplayPlayerThrows">0</span><!-- Current dice throw count--> 
-           <span id="mainDisplayPlayerScore">0</span> <!-- Score -->
-           <span id="mainDisplayPlayerLives">3 lives</span> <!-- Lives --><p>
+        <p><div id="mainDisplayPlayerName">-</div>
+           <div id="mainDisplayPlayerThrows">-</div><!-- Current dice throw count--> 
+           <div id="mainDisplayPlayerScore">-</div> <!-- Score -->
+           <div id="mainDisplayPlayerLives">-</div> <!-- Lives --></p>
 
-            <p><span id="game_messages">Let's begin...</span></span>
+            <p><div id="game_messages">Let's begin...</div></p>
     <div> <!-- End primary display -->
 
     <form onclick="return false"><!-- Game buttons form -->
@@ -58,9 +75,15 @@
         <button id="holdButton" onclick="dice_hold()">Hold</button>
     </form>
 
+    <br />
 
+    <form>
+        <div style="text-align: right;">
+        <button id="start_game_again">New game</button>
+        </div>
+    </form>
 
-
+    </div><!-- Central game wrapper end -->
 
     <!-- Javascript start --------------------------------------------------------------- -->
     <script>
@@ -73,14 +96,35 @@
         let in_session = 0; //Checks if the game is currently "in session" (or being played actively)
         let namesCount = 0; // This is an INDEX function. Renamed specifically for the add_players function. 
         let indexCount = 0; // Another INDEX function. Named specifically for the dice_throw() function.
+        let player_count = 0;
 
 
         function add_players(){
             player_name = document.getElementById("addPlayerName").value;
+            
+            if (player_count >= 10){
+                alert("We are not able to add any more names to this table.")
+                return false;
+            }
+
+            if (in_session == 1)  { // Check if player attempts to add more people after session starts
+                alert("The game is now in session! We can't add any more people to the table.")
+                return false;
+
+            }
+
+            if (player_name == "")  { // Checks if name input is blank
+                alert("Please type in a username! We can't play with a ghost.")
+                return false;
+
+            }
+
+
+
             active_player.push(player_name);
             player_lives.push(3);
             player_score.push(0);
-            
+            player_count += 1;
             
             /* Game name replacement start! */
             document.getElementById("player_"+ namesCount +"_name").innerText = active_player[namesCount] + " "; //Replaces the player names
@@ -93,21 +137,47 @@
             console.log("Active player inside function: " + active_player);
             console.log(player_lives);
  
+            document.getElementById("addPlayerName").value = "";
         };
 
         function primary_display_update(){
             document.getElementById("mainDisplayPlayerName").innerText = active_player[indexCount];
-            document.getElementById("mainDisplayPlayerScore").innerText = player_score[indexCount];
-            document.getElementById("mainDisplayPlayerLives").innerText = player_lives[indexCount];
-            document.getElementById("mainDisplayPlayerThrows").innerText = dice_result;
+            document.getElementById("mainDisplayPlayerScore").innerText = player_score[indexCount] + " score";
+            document.getElementById("mainDisplayPlayerLives").innerText = player_lives[indexCount] + " lives";
+            document.getElementById("mainDisplayPlayerThrows").innerText = dice_result + " rolled";
 
             for (let forIndex = 0; forIndex < active_player.length; forIndex++){
                 document.getElementById("player_"+ forIndex +"_name").innerText = active_player[forIndex] + " "; //Replaces the player names
                 document.getElementById("player_"+ forIndex +"_lives").innerText = player_lives[forIndex] + " lives"; //Replaces the player lives
                 document.getElementById("player_"+ forIndex +"_score").innerText = player_score[forIndex] + " "; //Replaces the player lives
             }
+
+
+            
+            function checkScores (player_lives){
+                    let sum_of_lives = 0;
+
+                    for (let i = 0; i < player_lives.length; i++){
+                        sum_of_lives += player_lives[i];
+                    }
+
+                    return sum_of_lives <= 0;
+                }
+
+            if (checkScores(player_lives) == true && in_session == 1){
+                next_turn_check();
+                document.getElementById("game_messages").innerText = "It appears you've all run out of lives! So sad. Try again?";
+
+                console.log(checkscores())
+                
+
+
+
+            }
         };
 
+
+        // 
         function next_turn_check() {
 
             if (indexCount >= active_player.length - 1) {// Simply checks if next entry in array exists
@@ -130,6 +200,8 @@
             dice_result = Math.floor(Math.random() * 6) + 1;
             console.log(); 
 
+            console.log(player_lives)
+
         };
 
 
@@ -141,23 +213,45 @@
         function dice_throw(){
 
             dice_roll()
+            in_session = 1;
 
-            if (player_score[indexCount] + dice_result >= 100){ //Checked if roll is over 100!
+            function checkfor21(){
+                    if (player_score + dice_result % 21 === 0)
+                        return false;
+                    
+            }
+            
+            console.log(checkfor21());
+
+            if (active_player == ""){
+                document.getElementById("game_messages").innerText = "Wow you're impatient. Add at least one name first and then try again!";
+                in_session = 0;
+
+            } else if (player_score[indexCount] + dice_result >= 100){ //Checked if roll is over 100!
                 player_score[indexCount] = 100;
                 document.getElementById("game_messages").innerText = active_player[indexCount] + " has won this game! Congratulations! You rolled a " + dice_result + ".";
             
             } else if (player_lives[indexCount] == 0){ // Checks if curent player has lives 
                 next_turn_check();
                 document.getElementById("game_messages").innerText = "You have no lives left! Pass the dice to " + active_player[indexCount];
+            
+            } else if (checkfor21 == true && player_score != 0) { // Checks if score is divisible by 21
+                player_score[indexCount] = 0;
+                player_lives[indexCount] -= 1;
 
 
+                
+                
+                document.getElementById("game_messages").innerText = "Oh no! You scored  a multiple of 21! Busted. You forfeit the turn. Pass the die to " + active_player[indexCount];
+                next_turn_check();
 
-            } else if (dice_result != 1) {
+                
+
+            } else if (dice_result != 1) { // Checks if dice roll is not exactly 1
                 player_score[indexCount] += dice_result;
                 document.getElementById("game_messages").innerText = "You have rolled a " + dice_result + ", your current score is: " + player_score[indexCount];
                 
-
-            } else if (dice_result == 1) {
+            } else if (dice_result == 1) { // Checks if the dice is IS exactly 1! (hahaha)
                 player_score[indexCount] = 0;
                 player_lives[indexCount] -= 1;
                 
@@ -165,41 +259,23 @@
                 document.getElementById("game_messages").innerText = "Oh no! You rolled a 1. Oops. You've just lost your points! You've forfeit your turn. Next up: " + active_player[indexCount];
             } 
 
-
-            
-            
-
-
-
-
             primary_display_update()
         }
 
         function dice_hold(){
             
 
-
+            if (in_session == 0){
+                document.getElementById("game_messages").innerText = "Patience! The game has not yet started. Add the names to the table and then click 'Roll Dice' for the first player to go.";
+                
+            } else {
             next_turn_check()
             document.getElementById("game_messages").innerText = "You've chosen to hold? Probably smart. Next up is: " + active_player[indexCount];
-    
-    
+            }
     
     
             primary_display_update;
         }
-        
-                  
-            
-
-
-
-
-
-        
-
-
-
-
 
     </script>
 </body>
