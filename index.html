@@ -50,8 +50,8 @@
         </div> <!-- End player table -->
 
             <p>The aim is to be the first person to reach 100 points by rolling the dice as many times as you dare. Be careful though! if you roll a 1 or score a multiple of 21, there are penalties!</p>
-            <p><b>Penalties:</b> <br />If you roll a 1 - you forfeit the turn, lose a life, lose your accumilated score.</br >
-            If you score a multiple of 21 - you forfeit the turn and lose exactly 21 points from your accumilated score. </p>
+            <p><b>Penalty: </b>If you roll a 1 - you forfeit the turn, lose a life, lose your accumulated score.</br >
+            <b>Bonus: </b>If you score a multiple of 21 - you get 21 more points added to your score! </p>
             <p>So how to win? Simply reach 100 points and avoid  those dastardly 1 rolls. Scared to roll again? Press the hold button for the next player to have a go! Careful though, you don't want them racing ahead. </p>
 
 
@@ -245,11 +245,11 @@
                 
 
             } else if (checkFor21Variable % 21 == 0 && player_score != 0) { // Checks if score is divisible by 21
-                player_score[indexCount] -= 21;
+                player_score[indexCount] += 21;
 
 
-                next_turn_check();
-                document.getElementById("game_messages").innerText = "Oh no! You scored  a multiple of 21! Busted. You forfeit the turn. Pass the die to " + active_player[indexCount];
+
+                document.getElementById("game_messages").innerText = "Wow! You just scored a multiple of 21! Well done! 21 more points have been added...";
                 
 
                 
